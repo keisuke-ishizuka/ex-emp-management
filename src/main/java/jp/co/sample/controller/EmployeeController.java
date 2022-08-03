@@ -45,6 +45,7 @@ public class EmployeeController {
 		return updateEmployeeForm;
 	}
 	
+	@RequestMapping("/showDetail")
 	public String showDetail(String id, Model model) {
 		int empId = Integer.parseInt(id);
 		Employee employee
