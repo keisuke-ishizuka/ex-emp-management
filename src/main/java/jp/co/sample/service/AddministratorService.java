@@ -22,4 +22,12 @@ public class AddministratorService {
 	public void insert(Administrator administrator) {
 		administratorRepository.insert(administrator);
 	}
+	
+	/**
+	 * ログイン処理
+	 *
+	 */
+	public Administrator login(String mailAddress, String password) {
+		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
+	}
 }
