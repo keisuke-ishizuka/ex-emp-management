@@ -45,6 +45,7 @@
             	th:action="@{/login}" method="post"
             	th:object="${loginForm}">
               <fieldset>
+              <div th:if="${administrator == null}" th:text="${error}"></div>
                 <legend>ログイン</legend>
                 <div class="form-group">
                   <div class="alert alert-danger">
