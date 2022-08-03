@@ -36,7 +36,7 @@ public class AdministratorRepository {
 	 * @return 追加された後の管理者情報
 	 */
 	public void insert(Administrator administrator) {
-		String sql = "INSERT INTO administrators(name,mail_address,　)"
+		String sql = "INSERT INTO administrators(name,mail_address,password)"
 				+ " VALUES(:name,:mailAddress,:password)";
 		
 		SqlParameterSource param
