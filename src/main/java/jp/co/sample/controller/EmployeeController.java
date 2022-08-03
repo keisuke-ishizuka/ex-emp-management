@@ -52,6 +52,18 @@ public class EmployeeController {
 			= employeeService.showDetail(empId);
 		model.addAttribute("employee",employee);
 		return "employee/detail.html";
-		
+	}
+	
+	/**
+	 * 従業員の更新とe/employee/showListへのフォワード
+	 *
+	 */
+	@RequestMapping("/update")
+	public String update(UpdateEmployeeForm form) {
+		Employee employee
+			= employeeService.showDetail(Integer.parseInt(form.getId()));
+		employee.setDependentsCount(Integer.parseInt(form.getDependentsCount()));
+		employeeService.update(employee);
+		return "/employee/showList";
 	}
 }
