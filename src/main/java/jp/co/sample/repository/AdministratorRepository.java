@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import jp.co.sample.domain.Administrator;
 
-
 @Repository
 public class AdministratorRepository {
 	
@@ -33,7 +32,6 @@ public class AdministratorRepository {
 	/**
 	 * 管理者情報を挿入する
 	 * @param administrator　管理者情報
-	 * @return 追加された後の管理者情報
 	 */
 	public void insert(Administrator administrator) {
 		String sql = "INSERT INTO administrators(name,mail_address,password)"

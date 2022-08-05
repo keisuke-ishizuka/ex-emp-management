@@ -31,7 +31,6 @@ public class AdministratorContoroller {
 	@ModelAttribute
 	public InsertAdministratorForm setUpInsertAdministratorForm() {
 		InsertAdministratorForm administratorForm = new InsertAdministratorForm();
-		
 		return administratorForm;
 	}
 	
@@ -83,14 +82,15 @@ public class AdministratorContoroller {
 	
 	@RequestMapping("/login")
 	public String login(LoginForm form, Model model) {
-		Administrator administrator
-		 = addministratorService.login(form.getMailAddress(), form.getPassword());
+		Administrator administrator 
+			= addministratorService.login(form.getMailAddress(), form.getPassword());
 		
 		if(administrator == null) {
 			model.addAttribute("error", "メールアドレスまたはパスワードが不正です。");
-			return "administrator/login.html";
-		}
-		session.setAttribute("administratorName", administrator);
+			return "administrator/login";
+		} else {
+		session.setAttribute("administratorName", administrator.getName());
 		return "forward:/employee/showList";
+		}
 	}
 }

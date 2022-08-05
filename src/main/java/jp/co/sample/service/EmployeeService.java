@@ -11,7 +11,7 @@ import jp.co.sample.repository.EmployeeRepository;
 
 
 @Service
-@Transactional
+//@Transactional
 public class EmployeeService {
 
 	@Autowired
