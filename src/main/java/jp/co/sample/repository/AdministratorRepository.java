@@ -19,8 +19,8 @@ public class AdministratorRepository {
 		= (rs,i) -> {
 			Administrator administrator = new Administrator();
 			administrator.setId(rs.getInt("id"));
-			administrator.setName(rs.getNString("name"));
-			administrator.setMailAddress(rs.getString("mailAddress"));
+			administrator.setName(rs.getString("name"));
+			administrator.setMailAddress(rs.getString("mail_address"));
 			administrator.setPassword(rs.getString("password"));
 			
 			return administrator;
