@@ -80,6 +80,10 @@ public class AdministratorContoroller {
 	@Autowired
 	private HttpSession session;
 	
+	/**
+	 * login
+	 *
+	 */
 	@RequestMapping("/login")
 	public String login(LoginForm form, Model model) {
 		Administrator administrator 
@@ -92,5 +96,15 @@ public class AdministratorContoroller {
 		session.setAttribute("administratorName", administrator.getName());
 		return "forward:/employee/showList";
 		}
+	}
+	
+	/**
+	 * logout
+	 *
+	 */
+	@RequestMapping("logout")
+	public String logout() {
+		session.invalidate();
+		return "redirect:/";
 	}
 }

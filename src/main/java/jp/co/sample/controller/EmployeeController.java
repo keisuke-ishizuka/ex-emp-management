@@ -55,7 +55,7 @@ public class EmployeeController {
 	}
 	
 	/**
-	 * 従業員の更新とe/employee/showListへのフォワード
+	 * 従業員の更新と/employee/showListへのリダイレクト
 	 *
 	 */
 	@RequestMapping("/update")
@@ -64,6 +64,6 @@ public class EmployeeController {
 			= employeeService.showDetail(Integer.parseInt(form.getId()));
 		employee.setDependentsCount(Integer.parseInt(form.getDependentsCount()));
 		employeeService.update(employee);
-		return "/employee/showList";
+		return "redirect:/employee/showList";
 	}
 }
